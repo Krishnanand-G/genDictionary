@@ -13,6 +13,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-image: url(/images/pexels-element-digital-1370295.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .search-form {
@@ -37,4 +41,39 @@ body {
     padding: 10px;
     border-radius: 5px;
     width: 40vh;
+}
+
+.results {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80vh;
+    background-color: antiquewhite;
+    border: 4px solid black;
+}
+
+.error {
+    background-color: red;
+    color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    font-size: 35px;
+}
+
+p {
+    font-size: 20px;
 }
