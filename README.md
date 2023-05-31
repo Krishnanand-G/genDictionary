@@ -6,7 +6,7 @@
 
 ## Example :
 
-! [exampleImage](images\Screenshot (5).png)
+![exampleImage](images/Screenshot (5).png)
 
 ### **website** - https://krishnanand-g.github.io/me-internship-project/ 
 
