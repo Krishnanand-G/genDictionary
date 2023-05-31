@@ -1,0 +1,40 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.search {
+    margin: 20px;
+    width: 60vh;
+    height: 5vh;
+}
+
+.submit {
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 40vh;
+}
