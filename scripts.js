@@ -33,34 +33,60 @@ function displayErrorMessage() {
   document.querySelector('.search-form').insertAdjacentElement('afterend', errorMessage);
 }
 
+
+
 function displayResults(data) {
   clearResults();
 
+
+
+
+
+
+
+  
+  let filteredData = data.filter((entry) => {
+    let answer = entry.meanings.find((e) => e.partOfSpeech === 'noun');
+    return answer != undefined;
+  })
+  
+  console.log(filteredData);
+
+  const onlyEntry = filteredData[0];
+
+
+  if (filteredData.length === 0) {
+    displayErrorMessage();
+    return;
+  }
+
+
+
+  
   resultContainer = document.createElement('div');
   resultContainer.classList.add('results');
 
-  data.forEach((entry) => {
+
     const entryElement = document.createElement('div');
     entryElement.classList.add('entry');
 
     const wordElement = document.createElement('h2');
-    wordElement.textContent = entry.word;
+    wordElement.textContent = onlyEntry.word;
 
     const definitionElement = document.createElement('p');
-    const firstNoun = entry.meanings.find((meaning) => meaning.partOfSpeech === 'noun');
+    const firstNoun = onlyEntry.meanings.find((meaning) => meaning.partOfSpeech === 'noun');
     if (firstNoun && firstNoun.definitions.length > 0) {
       definitionElement.textContent = firstNoun.definitions[0].definition;
     } else {
       clearResults();
       displayErrorMessage();
-      return; // Exit the function early
+      return; 
     }
 
     entryElement.appendChild(wordElement);
     entryElement.appendChild(definitionElement);
 
     resultContainer.appendChild(entryElement);
-  });
 
   document.querySelector('.search-form').insertAdjacentElement('afterend', resultContainer);
 }
